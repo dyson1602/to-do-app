@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.to-do-header {
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+}
+
+.list-columns {
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+}

@@ -2,13 +2,19 @@ import React from "react"
 import Card from '../Components/Card'
 
 class ToDoContainer extends React.Component {
-    render (){
-        return (
-            <>
-            <h1> To Do Container </h1>
-            </>
-        )
-    }
+
+  tasks = () => {
+    return this.props.toDoArray().map(taskObj => <Card taskObj={taskObj}/>)
+  }
+
+  render() {
+    return (
+      <div class="list-columns">
+        <h2> To-Do </h2>
+        { this.tasks() }
+      </div>
+    )
+  }
 }
 
 export default ToDoContainer

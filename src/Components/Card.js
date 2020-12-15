@@ -1,10 +1,11 @@
 import React from "react"
 
-function Card(){
+function Card(props) {
     return (
-        <>
-        <h1>Card</h1>
-        </>
+        <div>
+            <h5>{props.taskObj.title}</h5>
+            
+        </div>
     )
 }
 

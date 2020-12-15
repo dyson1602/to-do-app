@@ -2,11 +2,11 @@ import React from "react"
 import Card from "../Components/Card"
 
 class DoingContainer extends React.Component {
-    render(){
+    render() {
         return (
-            <>
-            <h1>Doing Container </h1>
-            </>
+            <div class="list-columns">
+                <h2>Doing</h2>
+            </div>
         )
     }
 }
