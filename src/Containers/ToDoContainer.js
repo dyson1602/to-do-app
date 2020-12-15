@@ -4,7 +4,7 @@ import Card from '../Components/Card'
 class ToDoContainer extends React.Component {
 
   tasks = () => {
-    return this.props.toDoArray().map(taskObj => <Card taskObj={taskObj}/>)
+    return this.props.toDoArray().map(taskObj => <Card changeColumnHandler={this.props.changeColumnHandler} taskObj={taskObj}/>)
   }
 
   render() {
