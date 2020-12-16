@@ -11,6 +11,9 @@ class Card extends React.Component {
 
     localChangeHandler = (e) => {
         this.props.changeColumnHandler(this.props.taskObj, e.target.name)
+        //had to add this setState, because of some strange behavior when you 
+        //moved a task to another column
+        this.setState({beenClicked: false})
     }
 
     setButtons = () => {

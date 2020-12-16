@@ -4,7 +4,7 @@ import DoingContainer from "./DoingContainer"
 import DoneContainer from "./DoneContainer"
 
 class ListsContainer extends React.Component {
-
+  //STATE
   state = {
     tasksArray: [],
   }
@@ -29,6 +29,7 @@ class ListsContainer extends React.Component {
     return updatedTaskObj
   }
 
+  //HELPER FUNCTIONS
   filterToDoTasksArray = () => {
     return this.state.tasksArray.filter(task => task.status === "To-Do")
   }
@@ -39,6 +40,8 @@ class ListsContainer extends React.Component {
     return this.state.tasksArray.filter(task => task.status === "Done")
   }
 
+  //EVENT HANDLERS
+  
   changeColumnHandler = (taskObj, e) => {
     if (e === "to-do") {
       taskObj.status = "Doing"
@@ -55,6 +58,8 @@ class ListsContainer extends React.Component {
     newTasksArray[idx] = taskObj
     this.setState({tasksArray: newTasksArray})
   }
+
+  //RENDER
 
   render() {
     return (
