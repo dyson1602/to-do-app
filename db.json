@@ -1,28 +1,28 @@
 {
-    "tasks": [
-        {
-            "id": 1,
-            "title": "make app",
-            "description": "we makin an app fool",
-            "start": "2020-12-18",
-            "end": "2020-12-20",
-            "status": "To-Do"
-        },
-        {
-            "id": 2,
-            "title": "keep making app",
-            "description": "we makin an app fool",
-            "start": "2020-12-18",
-            "end": "2020-12-20",
-            "status": "Doing"
-        },
-        {
-            "id": 3,
-            "title": "deploy dat boi",
-            "description": "we makin an app fool",
-            "start": "2020-12-18",
-            "end": "2020-12-20",
-            "status": "Done"
-        }
-    ]
+  "tasks": [
+    {
+      "id": 1,
+      "title": "make app",
+      "description": "we makin an app fool",
+      "start": "2020-12-18",
+      "end": "2020-12-20",
+      "status": "To-Do"
+    },
+    {
+      "id": 2,
+      "title": "keep making app",
+      "description": "we makin an app fool",
+      "start": "2020-12-18",
+      "end": "2020-12-20",
+      "status": "Done"
+    },
+    {
+      "id": 3,
+      "title": "deploy dat boi",
+      "description": "we makin an app fool",
+      "start": "2020-12-18",
+      "end": "2020-12-20",
+      "status": "Doing"
+    }
+  ]
 }

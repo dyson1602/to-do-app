@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react"
 import React from "react"
 
 class Card extends React.Component {
@@ -10,18 +9,18 @@ class Card extends React.Component {
         this.setState({ beenClicked: !this.state.beenClicked })
     }
 
-    localChangeHandler = () => {
-        this.props.changeColumnHandler(this.props.taskObj)
+    localChangeHandler = (e) => {
+        this.props.changeColumnHandler(this.props.taskObj, e.target.name)
     }
 
     setButtons = () => {
         if (this.props.taskObj.status === "To-Do") {
-            return <button onClick={this.localChangeHandler}>Right</button>
+            return <button name="to-do" onClick={this.localChangeHandler}>Right</button>
         } else if (this.props.taskObj.status === "Doing") {
-            return <><button onClick={this.localChangeHandler}>Left</button>
-            <button onClick={this.localChangeHandler}>Right</button></>
+            return <><button name="doingL" onClick={this.localChangeHandler}>Left</button>
+            <button name="doingR" onClick={this.localChangeHandler}>Right</button></>
         } else {
-            return <button onClick={this.localChangeHandler}>Left</button>
+            return <button name="done" onClick={this.localChangeHandler}>Left</button>
         }
     }
 

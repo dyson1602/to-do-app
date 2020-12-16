@@ -16,6 +16,19 @@ class ListsContainer extends React.Component {
     this.setState({ tasksArray })
   }
 
+  updateStatusFetch = async (taskObj) => {
+    const status = {status: taskObj.status}
+    const apiResponse = await fetch(`http://localhost:4000/tasks/${taskObj.id}`, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(status)
+    })
+    const updatedTaskObj = await apiResponse.json()
+    return updatedTaskObj
+  }
+
   filterToDoTasksArray = () => {
     return this.state.tasksArray.filter(task => task.status === "To-Do")
   }
@@ -26,14 +39,24 @@ class ListsContainer extends React.Component {
     return this.state.tasksArray.filter(task => task.status === "Done")
   }
 
-  changeColumnHandler = (taskObj) => {
-    console.log(taskObj)
-    taskObj.status = "Doing"
-
+  changeColumnHandler = (taskObj, e) => {
+    if (e === "to-do") {
+      taskObj.status = "Doing"
+    } else if (e === "doingL") {
+      taskObj.status = "To-Do"
+    } else if (e === "doingR") {
+      taskObj.status = "Done"
+    } else if (e === "done") {
+      taskObj.status = "Doing"
+    }
+    this.updateStatusFetch(taskObj)
+    let newTasksArray = [...this.state.tasksArray]
+    let idx = newTasksArray.findIndex(task => task.id === taskObj.id)
+    newTasksArray[idx] = taskObj
+    this.setState({tasksArray: newTasksArray})
   }
 
   render() {
-    //   console.log(this.filterToDoTasksArray())
     return (
       <div>
         <div class="row">
@@ -44,7 +67,7 @@ class ListsContainer extends React.Component {
             <DoingContainer changeColumnHandler={this.changeColumnHandler} doingArray={this.filterDoingTasksArray} />
           </div>
           <div class="col s4">
-            <DoneContainer changeColumnHandler={this.changeColumnHandler} doneArray={this.filterDoneTasksArray}/>
+            <DoneContainer changeColumnHandler={this.changeColumnHandler} doneArray={this.filterDoneTasksArray} />
           </div>
         </div>
       </div>
