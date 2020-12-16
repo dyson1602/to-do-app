@@ -18,7 +18,8 @@ class Card extends React.Component {
         if (this.props.taskObj.status === "To-Do") {
             return <button onClick={this.localChangeHandler}>Right</button>
         } else if (this.props.taskObj.status === "Doing") {
-            return <><button onClick={this.localChangeHandler}>Left</button><button onClick={this.props.localChangeHandler}>Right</button></>
+            return <><button onClick={this.localChangeHandler}>Left</button>
+            <button onClick={this.localChangeHandler}>Right</button></>
         } else {
             return <button onClick={this.localChangeHandler}>Left</button>
         }
